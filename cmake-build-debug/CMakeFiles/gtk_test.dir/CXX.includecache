@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/joe/Desktop/projects/turbo/main.cpp
+/home/sawyer/repo/freetime/turbo/main.cpp
 iostream
 -
 gtk/gtk.h
@@ -1397,6 +1397,12 @@ glib/gqueue.h
 -
 glib/grand.h
 -
+glib/grcbox.h
+-
+glib/grefcount.h
+-
+glib/grefstring.h
+-
 glib/gregex.h
 -
 glib/gscanner.h
@@ -1721,6 +1727,22 @@ glib/glist.h
 /usr/include/glib-2.0/glib/grand.h
 glib/gtypes.h
 -
+
+/usr/include/glib-2.0/glib/grcbox.h
+glib/gmem.h
+-
+
+/usr/include/glib-2.0/glib/grefcount.h
+glib/gatomic.h
+-
+glib/gtypes.h
+-
+
+/usr/include/glib-2.0/glib/grefstring.h
+gmem.h
+/usr/include/glib-2.0/glib/gmem.h
+gmacros.h
+/usr/include/glib-2.0/glib/gmacros.h
 
 /usr/include/glib-2.0/glib/gregex.h
 glib/gerror.h
@@ -2665,6 +2687,12 @@ gtk/gtkeventbox.h
 -
 gtk/gtkeventcontroller.h
 -
+gtk/gtkeventcontrollerkey.h
+-
+gtk/gtkeventcontrollermotion.h
+-
+gtk/gtkeventcontrollerscroll.h
+-
 gtk/gtkexpander.h
 -
 gtk/gtkfixed.h
@@ -2706,6 +2734,8 @@ gtk/gtkgesturepan.h
 gtk/gtkgesturerotate.h
 -
 gtk/gtkgesturesingle.h
+-
+gtk/gtkgesturestylus.h
 -
 gtk/gtkgestureswipe.h
 -
@@ -3406,6 +3436,26 @@ gtk/gtktypes.h
 gtk/gtkenums.h
 -
 
+/usr/include/gtk-3.0/gtk/gtkeventcontrollerkey.h
+gdk/gdk.h
+-
+gtk/gtkeventcontroller.h
+-
+gtk/gtkimcontext.h
+-
+
+/usr/include/gtk-3.0/gtk/gtkeventcontrollermotion.h
+gdk/gdk.h
+-
+gtk/gtkeventcontroller.h
+-
+
+/usr/include/gtk-3.0/gtk/gtkeventcontrollerscroll.h
+gdk/gdk.h
+-
+gtk/gtkeventcontroller.h
+-
+
 /usr/include/gtk-3.0/gtk/gtkexpander.h
 gtk/gtkbin.h
 -
@@ -3509,6 +3559,10 @@ gtk/gtkgesture.h
 -
 
 /usr/include/gtk-3.0/gtk/gtkgesturesingle.h
+gtk/gtkgesture.h
+-
+
+/usr/include/gtk-3.0/gtk/gtkgesturestylus.h
 gtk/gtkgesture.h
 -
 
@@ -4464,7 +4518,7 @@ pango/pango.h
 cairo.h
 -
 
-/usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h
+/usr/lib/glib-2.0/include/glibconfig.h
 glib/gmacros.h
 -
 limits.h

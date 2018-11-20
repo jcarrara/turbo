@@ -248,6 +248,9 @@ CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/glib-2.0/glib/gqsort.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/glib-2.0/glib/gquark.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/glib-2.0/glib/gqueue.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/glib-2.0/glib/grand.h
+CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/glib-2.0/glib/grcbox.h
+CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/glib-2.0/glib/grefcount.h
+CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/glib-2.0/glib/grefstring.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/glib-2.0/glib/gregex.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/glib-2.0/glib/gscanner.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/glib-2.0/glib/gsequence.h
@@ -440,6 +443,9 @@ CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkentrycompletion.
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkenums.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkeventbox.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkeventcontroller.h
+CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkeventcontrollerkey.h
+CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkeventcontrollermotion.h
+CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkeventcontrollerscroll.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkexpander.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkfilechooser.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkfilechooserbutton.h
@@ -461,6 +467,7 @@ CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkgesturemultipres
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkgesturepan.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkgesturerotate.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkgesturesingle.h
+CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkgesturestylus.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkgestureswipe.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkgesturezoom.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/gtk-3.0/gtk/gtkglarea.h
@@ -614,5 +621,5 @@ CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/pango-1.0/pango/pango-utils.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/pango-1.0/pango/pango-version-macros.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/pango-1.0/pango/pango.h
 CMakeFiles/gtk_test.dir/main.cpp.o: /usr/include/pango-1.0/pango/pangocairo.h
-CMakeFiles/gtk_test.dir/main.cpp.o: /usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h
+CMakeFiles/gtk_test.dir/main.cpp.o: /usr/lib/glib-2.0/include/glibconfig.h
 
