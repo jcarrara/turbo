@@ -1,0 +1,4 @@
+DOM representation:
+    each tag represented as a node, has a number of children
+
+

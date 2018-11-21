@@ -1,4 +1,4 @@
-/home/joe/Downloads/CLion-2018.2.2/clion-2018.2.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/joe/Desktop/projects/turbo
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/gcc -G "CodeBlocks - Unix Makefiles" /home/sawyer/repo/turbo
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/joe/Desktop/projects/turbo/cmake-build-debug
+-- Build files have been written to: /home/sawyer/repo/turbo/cmake-build-debug

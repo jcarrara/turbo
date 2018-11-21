@@ -3,7 +3,7 @@ project(gtk_test)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES main.cpp parse/html/parser_main.cpp parse/html/parser_main.h struct/html/node/generic.cpp struct/html/node/generic.h)
 add_executable(gtk_test ${SOURCE_FILES})
 
 find_package(PkgConfig REQUIRED)

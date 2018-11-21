@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/joe/Downloads/CLion-2018.2.2/clion-2018.2.2/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /usr/bin/cmake
 
 # The command to remove a file.
-RM = /home/joe/Downloads/CLion-2018.2.2/clion-2018.2.2/bin/cmake/linux/bin/cmake -E remove -f
+RM = /usr/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/joe/Desktop/projects/turbo
+CMAKE_SOURCE_DIR = /home/sawyer/repo/turbo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/joe/Desktop/projects/turbo/cmake-build-debug
+CMAKE_BINARY_DIR = /home/sawyer/repo/turbo/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/joe/Desktop/projects/turbo/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/joe/Downloads/CLion-2018.2.2/clion-2018.2.2/bin/cmake/linux/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -69,8 +69,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/joe/Downloads/CLion-2018.2.2/clion-2018.2.2/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/Desktop/projects/turbo/cmake-build-debug/CMakeFiles /home/joe/Desktop/projects/turbo/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sawyer/repo/turbo/cmake-build-debug/CMakeFiles /home/sawyer/repo/turbo/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joe/Desktop/projects/turbo/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sawyer/repo/turbo/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -150,6 +150,60 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/gtk_test.dir/build.make CMakeFiles/gtk_test.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+parse/html/parser_main.o: parse/html/parser_main.cpp.o
+
+.PHONY : parse/html/parser_main.o
+
+# target to build an object file
+parse/html/parser_main.cpp.o:
+	$(MAKE) -f CMakeFiles/gtk_test.dir/build.make CMakeFiles/gtk_test.dir/parse/html/parser_main.cpp.o
+.PHONY : parse/html/parser_main.cpp.o
+
+parse/html/parser_main.i: parse/html/parser_main.cpp.i
+
+.PHONY : parse/html/parser_main.i
+
+# target to preprocess a source file
+parse/html/parser_main.cpp.i:
+	$(MAKE) -f CMakeFiles/gtk_test.dir/build.make CMakeFiles/gtk_test.dir/parse/html/parser_main.cpp.i
+.PHONY : parse/html/parser_main.cpp.i
+
+parse/html/parser_main.s: parse/html/parser_main.cpp.s
+
+.PHONY : parse/html/parser_main.s
+
+# target to generate assembly for a file
+parse/html/parser_main.cpp.s:
+	$(MAKE) -f CMakeFiles/gtk_test.dir/build.make CMakeFiles/gtk_test.dir/parse/html/parser_main.cpp.s
+.PHONY : parse/html/parser_main.cpp.s
+
+struct/html/node/generic.o: struct/html/node/generic.cpp.o
+
+.PHONY : struct/html/node/generic.o
+
+# target to build an object file
+struct/html/node/generic.cpp.o:
+	$(MAKE) -f CMakeFiles/gtk_test.dir/build.make CMakeFiles/gtk_test.dir/struct/html/node/generic.cpp.o
+.PHONY : struct/html/node/generic.cpp.o
+
+struct/html/node/generic.i: struct/html/node/generic.cpp.i
+
+.PHONY : struct/html/node/generic.i
+
+# target to preprocess a source file
+struct/html/node/generic.cpp.i:
+	$(MAKE) -f CMakeFiles/gtk_test.dir/build.make CMakeFiles/gtk_test.dir/struct/html/node/generic.cpp.i
+.PHONY : struct/html/node/generic.cpp.i
+
+struct/html/node/generic.s: struct/html/node/generic.cpp.s
+
+.PHONY : struct/html/node/generic.s
+
+# target to generate assembly for a file
+struct/html/node/generic.cpp.s:
+	$(MAKE) -f CMakeFiles/gtk_test.dir/build.make CMakeFiles/gtk_test.dir/struct/html/node/generic.cpp.s
+.PHONY : struct/html/node/generic.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -157,11 +211,17 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... gtk_test"
+	@echo "... edit_cache"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... parse/html/parser_main.o"
+	@echo "... parse/html/parser_main.i"
+	@echo "... parse/html/parser_main.s"
+	@echo "... struct/html/node/generic.o"
+	@echo "... struct/html/node/generic.i"
+	@echo "... struct/html/node/generic.s"
 .PHONY : help
 
 

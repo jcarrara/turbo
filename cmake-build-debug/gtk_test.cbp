@@ -8,118 +8,140 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/joe/Desktop/projects/turbo/cmake-build-debug"/>
+				<Option working_dir="/home/sawyer/repo/turbo/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/joe/Desktop/projects/turbo/cmake-build-debug"/>
+				<Option working_dir="/home/sawyer/repo/turbo/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/joe/Desktop/projects/turbo/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtk_test">
-				<Option output="/home/joe/Desktop/projects/turbo/cmake-build-debug/gtk_test" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/joe/Desktop/projects/turbo/cmake-build-debug"/>
+				<Option output="/home/sawyer/repo/turbo/cmake-build-debug/gtk_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sawyer/repo/turbo/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/include/gtk-3.0"/>
-					<Add directory="/usr/include/at-spi2-atk/2.0"/>
-					<Add directory="/usr/include/at-spi-2.0"/>
-					<Add directory="/usr/include/dbus-1.0"/>
-					<Add directory="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
-					<Add directory="/usr/include/gio-unix-2.0"/>
-					<Add directory="/usr/include/cairo"/>
 					<Add directory="/usr/include/pango-1.0"/>
-					<Add directory="/usr/include/harfbuzz"/>
-					<Add directory="/usr/include/atk-1.0"/>
+					<Add directory="/usr/include/glib-2.0"/>
+					<Add directory="/usr/lib/glib-2.0/include"/>
+					<Add directory="/usr/lib/libffi-3.2.1/include"/>
+					<Add directory="/usr/include/fribidi"/>
+					<Add directory="/usr/include/cairo"/>
 					<Add directory="/usr/include/pixman-1"/>
 					<Add directory="/usr/include/freetype2"/>
 					<Add directory="/usr/include/libpng16"/>
+					<Add directory="/usr/include/harfbuzz"/>
+					<Add directory="/usr/include/uuid"/>
 					<Add directory="/usr/include/gdk-pixbuf-2.0"/>
-					<Add directory="/usr/include/glib-2.0"/>
-					<Add directory="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/include/libmount"/>
+					<Add directory="/usr/include/blkid"/>
+					<Add directory="/usr/include/gio-unix-2.0"/>
+					<Add directory="/usr/include/libdrm"/>
+					<Add directory="/usr/include/atk-1.0"/>
+					<Add directory="/usr/include/at-spi2-atk/2.0"/>
+					<Add directory="/usr/include/at-spi-2.0"/>
+					<Add directory="/usr/include/dbus-1.0"/>
+					<Add directory="/usr/lib/dbus-1.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 gtk_test"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 gtk_test"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gtk_test/fast">
-				<Option output="/home/joe/Desktop/projects/turbo/cmake-build-debug/gtk_test" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/joe/Desktop/projects/turbo/cmake-build-debug"/>
+				<Option output="/home/sawyer/repo/turbo/cmake-build-debug/gtk_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sawyer/repo/turbo/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/include/gtk-3.0"/>
-					<Add directory="/usr/include/at-spi2-atk/2.0"/>
-					<Add directory="/usr/include/at-spi-2.0"/>
-					<Add directory="/usr/include/dbus-1.0"/>
-					<Add directory="/usr/lib/x86_64-linux-gnu/dbus-1.0/include"/>
-					<Add directory="/usr/include/gio-unix-2.0"/>
-					<Add directory="/usr/include/cairo"/>
 					<Add directory="/usr/include/pango-1.0"/>
-					<Add directory="/usr/include/harfbuzz"/>
-					<Add directory="/usr/include/atk-1.0"/>
+					<Add directory="/usr/include/glib-2.0"/>
+					<Add directory="/usr/lib/glib-2.0/include"/>
+					<Add directory="/usr/lib/libffi-3.2.1/include"/>
+					<Add directory="/usr/include/fribidi"/>
+					<Add directory="/usr/include/cairo"/>
 					<Add directory="/usr/include/pixman-1"/>
 					<Add directory="/usr/include/freetype2"/>
 					<Add directory="/usr/include/libpng16"/>
+					<Add directory="/usr/include/harfbuzz"/>
+					<Add directory="/usr/include/uuid"/>
 					<Add directory="/usr/include/gdk-pixbuf-2.0"/>
-					<Add directory="/usr/include/glib-2.0"/>
-					<Add directory="/usr/lib/x86_64-linux-gnu/glib-2.0/include"/>
-					<Add directory="/usr/include/c++/7"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
-					<Add directory="/usr/include/c++/7/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/include/libmount"/>
+					<Add directory="/usr/include/blkid"/>
+					<Add directory="/usr/include/gio-unix-2.0"/>
+					<Add directory="/usr/include/libdrm"/>
+					<Add directory="/usr/include/atk-1.0"/>
+					<Add directory="/usr/include/at-spi2-atk/2.0"/>
+					<Add directory="/usr/include/at-spi-2.0"/>
+					<Add directory="/usr/include/dbus-1.0"/>
+					<Add directory="/usr/lib/dbus-1.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 gtk_test/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/joe/Desktop/projects/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 gtk_test/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/sawyer/repo/turbo/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sawyer/repo/turbo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/joe/Desktop/projects/turbo/main.cpp">
+		<Unit filename="/home/sawyer/repo/turbo/main.cpp">
 			<Option target="gtk_test"/>
 		</Unit>
-		<Unit filename="/home/joe/Desktop/projects/turbo/CMakeLists.txt">
+		<Unit filename="/home/sawyer/repo/turbo/parse/html/parser_main.cpp">
+			<Option target="gtk_test"/>
+		</Unit>
+		<Unit filename="/home/sawyer/repo/turbo/parse/html/parser_main.h">
+			<Option target="gtk_test"/>
+		</Unit>
+		<Unit filename="/home/sawyer/repo/turbo/struct/html/node/generic.cpp">
+			<Option target="gtk_test"/>
+		</Unit>
+		<Unit filename="/home/sawyer/repo/turbo/struct/html/node/generic.h">
+			<Option target="gtk_test"/>
+		</Unit>
+		<Unit filename="/home/sawyer/repo/turbo/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
