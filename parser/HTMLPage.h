@@ -7,6 +7,7 @@
 
 #include <string>
 #include <vector>
+#include <stack>
 #include <queue>
 #include <fstream>
 #include <iostream>
@@ -30,12 +31,15 @@ private:
 		vector<HTMLElement*> children;
 	};
 
-	HTMLElement * parseHTML( HTMLElement *parent, queue<string> &tokens );
 	queue<string> tokenize( fstream &file );
 	string getToken( fstream &file );
 	void printElem( HTMLElement *elem, int level );
+	bool match( string a, string b );
+	bool singleBracket( string a );
+
 
 	vector<HTMLElement*> tags;
+	vector<HTMLElement*> comments;
 	vector<HTMLElement*> rootelems;
 
 };

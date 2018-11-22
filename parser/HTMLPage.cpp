@@ -1,106 +1,85 @@
 #include "HTMLPage.h"
+#include <functional>
+#include <algorithm>
+
 
 void HTMLPage::parseHTML( string filename ) {
-	fstream file;
-	file.open( filename );
+	fstream file( filename );
+	queue<string> token = tokenize( file );
 
-	if ( file.fail()) {
-		cout << "Fail.";
-		return;
+	fstream fileoutput( filename );
+
+	cout << "------------------" << endl << "Original File:" << endl << "------------------" << endl;
+	string s;
+	while ( !fileoutput.eof()) {
+		getline( fileoutput, s );
+		cout << s << endl;
 	}
 
-	queue<string> tokens = tokenize( file );
+	cout << "------------------" << endl << "Tokens:" << endl << "------------------" << endl;
+	queue<string> token2 = token;
+	while ( !token2.empty()) {
+		cout << "(" << token2.front() << ")" << endl;
+		token2.pop();
+	}
+	stack<HTMLElement *> elements;
 
-	parseHTML( nullptr, tokens );
-
-
-}
-
-HTMLPage::HTMLElement *HTMLPage::parseHTML( HTMLElement *parent, queue<string> &tokens ) {
-
-	if ( tokens.empty())
-		return nullptr;
-
-	string key = tokens.front().substr( 1, tokens.front().length() - 2 );
-	string tag = tokens.front().substr( 1, tokens.front().length() - 2 );
-	if( tag[0] != '!' ){
-		bool tagging = true;
-		for( int i = 0; i < key.length(); i++) {
-			if ( tag[i] == ' ' ){
-				tag = tag.substr( i+1, tag.length()-i-1 );
-				tagging = false;
-				break;
+	while ( !token.empty()) {
+		if ( token.front()[0] != '<' ) {
+			//nonelement code
+			elements.top()->content += token.front();
+			token.pop();
+		}
+		else if ( token.front()[1] == '/' ) {
+			//end elem code
+			while ( !match( elements.top()->key, token.front()) && !elements.empty()) {
+				HTMLElement *hold = elements.top();
+				elements.pop();
+				elements.top()->children.push_back( hold );
+				cout << hold->key << endl;
+				hold->container = elements.top();
+				elements.pop();
 			}
-		}
-		if( tagging )
-			tag = "";
-	}
-	else{
-		for( int i = 0; i < key.length(); i++) {
-			if ( tag[i] == ' ' ){
-				tag = tag.substr( 1, i-1 ) + "=" + tag.substr( i+1, tag.length()-i-1);
-				break;
+			HTMLElement *hold = elements.top();
+			elements.pop();
+			if ( !elements.empty()) {
+				elements.top()->children.push_back( hold );
+				cout << hold->key << endl;
+				hold->container = elements.top();
 			}
+			else
+				rootelems.push_back( hold );
+
+			token.pop();
 		}
-	}
-
-
-	HTMLElement *tagElem = new HTMLElement( tag, nullptr );
-//	cout << key << endl;
-	for( int i = 0; i < key.length(); i++) {
-		if ( key[i] == ' ' ){
-			key = key.substr( 0, i );
-			break;
-		}
-	}
-//	cout << key  << "()" << endl;
-
-	HTMLElement *newElem = new HTMLElement( key, parent );
-
-	if ( parent == nullptr ) {
-		if ( tokens.front()[1] == '!' || tokens.front().substr( 1, 4 ) == "meta" ) {
-			tokens.pop();
-//			cout << "TAG PUSH: " << tag;
-			tags.push_back( tagElem );
-			parseHTML( nullptr, tokens );
-			return nullptr;
+		else if ( singleBracket( token.front())) {
+			HTMLElement *singlebrak = new HTMLElement( token.front(), elements.top() );
+			elements.top()->children.push_back( singlebrak );
+			cout << singlebrak->key << endl;
+			token.pop();
 		}
 		else {
-			tokens.pop();
-			if( tag != "" ){
-//				cout << "TAG PUSH: " << tag;
-				tags.push_back( tagElem );
+			if ( token.front()[1] == '!' || token.front().substr( 1, 4 ) == "meta" ) {
+				if( token.front().substr(1,3) == "!--" ){
+					//comments
+					comments.push_back( new HTMLElement( token.front() ) );
+					token.pop();
+				}
+				else {
+					//doctype, etc code
+					tags.push_back( new HTMLElement( token.front()));
+					token.pop();
+				}
 			}
-			rootelems.push_back( newElem );
-			while ( (( '/' + key ) != tokens.front().substr( 1, tokens.front().length() - 2 )) )
-				parseHTML( newElem, tokens );
-			return nullptr;
-		}
-	}
-	if ( tokens.front()[0] == '<' ) {
-		tokens.pop();
-		if ( key.substr( 0, 4 ) == "meta" ) {
-			tags.push_back( tagElem );
-			return nullptr;
-		}
-		if ( key == ( '/' + parent->key ))
-			return nullptr;
-		else {
-			parent->children.push_back( newElem );
-			while (( '/' + key ) != tokens.front().substr( 1, tokens.front().length() - 2 ) ) {
-				parseHTML( newElem, tokens );
+				//normal element code
+			else {
+				elements.push( new HTMLElement( token.front()));
+				token.pop();
 			}
-			tokens.pop();
-			return nullptr;
 		}
-	}
-	else {
-
-		parent->content = tokens.front();
-		tokens.pop();
-		return nullptr;
 	}
 }
+
 
 queue<string> HTMLPage::tokenize( fstream &file ) {
 	queue<string> strings;
@@ -125,6 +104,8 @@ string HTMLPage::getToken( fstream &file ) {
 
 	string element;
 	element += it;
+	if ( file.peek() == ' ' )
+		element += ' ';
 
 	if ( it == '<' ) {
 		while ( !file.eof() && it != '>' ) {
@@ -146,9 +127,16 @@ string HTMLPage::getToken( fstream &file ) {
 		file.putback( '<' );
 	}
 
+	function<string( string )> rtrim = [&]( string s ) -> string {
+		while ( s[s.length() - 1] == ' ' ) {
+			s = s.substr( 0, s.length() - 1 );
+		}
+		return s;
+	};
+
 	for ( int i = 0; i < element.length(); i++ ) {
 		if ( isalpha( element[i] ) || ispunct( element[i] ) || isdigit( element[i] ))
-			return element;
+			return rtrim( element );
 	}
 
 	return "";
@@ -163,6 +151,11 @@ void HTMLPage::printPage() {
 	for ( HTMLElement *a : rootelems ) {
 		printElem( a, 0 );
 	}
+
+		cout << endl << "------------------" << endl << "Comments:" << endl << "------------------" << endl << endl;
+		for ( HTMLElement *a : comments ) {
+			printElem( a, 0 );
+		}
 }
 
 void HTMLPage::printElem( HTMLElement *elem, int level ) {
@@ -180,4 +173,38 @@ void HTMLPage::printElem( HTMLElement *elem, int level ) {
 
 	for ( HTMLElement *a : elem->children )
 		printElem( a, ( level + 1 ));
+}
+
+bool HTMLPage::match( string a, string b ) {
+	a = a.substr( 1, a.length() - 2 );
+	b = b.substr( 2, b.length() - 3 );
+
+	for ( int i = 0; i < ( a.length() - b.length() + 1 ); i++ ) {
+		if ( b == a.substr( i, b.length()))
+			return true;
+	}
+	return false;
+}
+
+bool HTMLPage::singleBracket( string a ) {
+
+	a = a.substr( 1, a.length() - 2 );
+
+
+	while ( a[a.length() - 1] == ' ' )
+		a = a.substr( 0, a.length() - 1 );
+	while ( a[0] == ' ' )
+		a = a.substr( 1, a.length() - 1 );
+
+
+	transform(a.begin(), a.end(), a.begin(), ::tolower);
+
+	if ( a == "hr" || a == "/br" || a == "br" ) {
+		return true;
+	}
+	if ( a.length() >= 3 )
+		if ( a.substr( 0, 3 ) == "img" ){
+			return true;
+		}
+	return false;
 }
