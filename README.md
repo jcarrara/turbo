@@ -9,7 +9,7 @@ Philosophy:
 * Nothing should respond to input in a way not in line with it's purpose or with physicality.
 
 Emergent goals:
-        * scrolling should have a latency with libinput of under 15ms
-        * on an average machine, under no circumstances can the interface go below 60fps or the native framerate of the monitor
-        * all input should have a reaction, even if the reaction is to animate to show that the expected response will occur
-        * any input that will take longer than 5 seconds to respond to should display a progress meter of some sort in the progress of fulfilling that request
+* scrolling should have a latency with libinput of under 15ms
+* on an average machine, under no circumstances can the interface go below 60fps or the native framerate of the monitor
+* all input should have a reaction, even if the reaction is to animate to show that the expected response will occur
+* any input that will take longer than 5 seconds to respond to should display a progress meter of some sort in the progress of fulfilling that request
